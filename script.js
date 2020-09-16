@@ -15,20 +15,25 @@ document.getElementById("searchButton").addEventListener("click", function() {
 
   //$("#searchButton").on("click", searchButton);
 
-  console.log(searchButton);
+  //console.log(searchButton);
 }) 
 
+ 
 function searchButton() {
+  var cityText = "Nashville";
+
+ 
    
-  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityText + "&units=imperial&appid=b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8"
+  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=&units=imperial&appid=5e9d927b0c1db047906ff51b126d3a19"
   
 $.ajax({
   url: queryURL,
   method: "GET"
-}).then(function(){
+}).then(function(response){
   console.log(searchButton);
 })
 }
+searchButton(onload);
 
 /*
 rendercityName();
