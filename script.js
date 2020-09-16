@@ -1,15 +1,36 @@
+//<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+/*
+var cityInput = document.querySelector("#cityText");
+var cityForm = document.querySelector("#cityForm");
+var cityName = document.querySelector("#cityName");
+var cityList = document.querySelector("#cityList");
+var cityCountSpan = document.querySelector("#cityCount");
+*/
+var searchButton = document.querySelector("searchButton");
 
 
+document.getElementById("searchButton").addEventListener("click", function() {
+  
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  //$("#searchButton").on("click", searchButton);
 
-var cityInput = document.querySelector("#city-text");
-var cityForm = document.querySelector("#city-form");
-var cityName = document.querySelector("#city-name");
-var cityList = document.querySelector("#city-list");
-var cityCountSpan = document.querySelector("#city-count");
-var searchButton = document.getElementById("#searchButton");
+  console.log(searchButton);
+}) 
 
+function searchButton() {
+   
+  var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityText + "&units=imperial&appid=b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8"
+  
+$.ajax({
+  url: queryURL,
+  method: "GET"
+}).then(function(){
+  console.log(searchButton);
+})
+}
+
+/*
 rendercityName();
 
 function rendercityName() {
@@ -46,18 +67,16 @@ cityForm.addEventListener("submit", function(event) {
 
       console.log(cityForm);
     });
- searchButton.addEventListener("search", function(event) {
-   event.rendercityName();
+    */
 
-   console.log(cityName);
- })   
+   
 
 
 
 
 
 
-
+/*
   const apiKey = "b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8"
     function searchButton() {
         let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityText + "&units=imperial&appid=b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8";
@@ -73,6 +92,9 @@ cityForm.addEventListener("submit", function(event) {
 
 
       }
-      $("#searchButton").on("click", searchButton);
+      */
+
+      
+      
  
 

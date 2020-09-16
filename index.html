@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
    
-    <!--<script src="scripts.js"></script>-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     
-    <link src="style.css"></link>
+    
     
 </head>
 
   
 <body>
   <header>
+    <link src="style.css"></link>
     <div class="container">
         <div class="jumbotron jumbotron-fluid;">
           <h1>Weather Dashboard</h1>
@@ -40,7 +40,12 @@
         <div class="row">
             <div class="col-lg-8"></div>
         </div>
-    </div>    
+    </div>  
+    <div class="cityName">
+      <form id="cityForm" method="POST">
+      </form>
+      <ul id="CityList"></ul>
+    </div>
     
       </div>
     </div> 
@@ -53,6 +58,7 @@
               <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
             </svg>
           </button>
+
           
           
          
@@ -74,11 +80,14 @@
             <input type = text   name ="keywords" placeholder ="Search..." style ="font-size:14px;hight:35px;width:240px;" value=""  maxlength=40>
             <input type = button   name="go" Value=" &#x1f50d; " style ="height:30px;width:35px;" onClick="search()">
         
-            </form>-->    
-    
+            </form>
+          -->
+         
+    <script src="script.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+   
     
 </body>
 </html>

@@ -1,7 +1,10 @@
-jumbotron-fluid {
+.jumbotron {
   text-align: center;
-  background-color: darkblue;
+  background-color: blue;
+  
 }
+
+
 
 
 
