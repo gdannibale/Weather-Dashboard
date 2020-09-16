@@ -43,7 +43,14 @@ cityForm.addEventListener("submit", function(event) {
     
       // Re-render the list
       rendercityNames();
+
+      console.log(cityForm);
     });
+ searchButton.addEventListener("search", function(event) {
+   event.rendercityName();
+
+   console.log(cityName);
+ })   
 
 
 
