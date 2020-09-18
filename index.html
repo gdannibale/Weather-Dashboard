@@ -6,15 +6,16 @@
     <title>Document</title>
    
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    
+    <link rel="stylesheet" href="style.css"></link>
     
     
 </head>
 
+
   
 <body>
   <header>
-    <link src="style.css"></link>
+    
     <div class="container">
         <div class="jumbotron jumbotron-fluid;">
           <h1>Weather Dashboard</h1>
@@ -34,30 +35,37 @@
         <div class="card-header">Search for a City:
             
         </div>
-               
-              
-    <div class="card">
-        <div class="row">
-            <div class="col-lg-8"></div>
-        </div>
-    </div>  
-    <div class="cityName">
-      <form id="cityForm" method="POST">
-      </form>
-      <ul id="CityList"></ul>
-    </div>
-    
+      
       </div>
     </div> 
         <div class="row"></div>
           <div class="col-sm-12"></div>
-          <input type="text" placeholder="Search..." name="search">
+          <input type="text" placeholder="Search..." name="search" id="cityName">
             <button class="btn btn-basic btn-sm search-button" style="font-display: center;" id="searchButton">
             <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
               <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
             </svg>
           </button>
+    <div class="container" id="cityList"></div> 
+      <div class="col-sm-4"></div>   
+    <div class="container" id="cityForecast">
+      <div class="col-sm-4"></div>
+        <dl>
+          <li id="city"></li> 
+          <li id="temperature"></li>
+          <li id="humidity"></li>
+          <li id="windSpeed"></li>
+        </dl>
+      
+      <!--<input type="text" placeholder = "Detroit" name="city" id="city">
+      <input type="text" placeholder = "09/17/20" name="date" id="date">
+      <input type="text" placeholder = "85 Degrees" id="temperature">
+      <input type="text" placeholder = "41%" id="humidity">
+      <input type="text" placeholder = "4.7 MPH" id="windSpeed">
+      <input type="text" placeholder = "9.49" id="uvIndex"> -->
+      
+    </div>      
 
           
           
@@ -68,25 +76,13 @@
       
       
       
-      <!--Tab content 
-
-        <form class="example" action="action_page.php">
-            <input type="text" placeholder="Search.." name="search">
-            <button type="submit"><i class="fa fa-search"></i></button>
-          </form>
-          
-      <form  name="searchengine">
-
-            <input type = text   name ="keywords" placeholder ="Search..." style ="font-size:14px;hight:35px;width:240px;" value=""  maxlength=40>
-            <input type = button   name="go" Value=" &#x1f50d; " style ="height:30px;width:35px;" onClick="search()">
-        
-            </form>
-          -->
+     
          
-    <script src="script.js"></script>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
    
     
 </body>

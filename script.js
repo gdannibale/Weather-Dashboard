@@ -1,105 +1,46 @@
-//<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-/*
-var cityInput = document.querySelector("#cityText");
-var cityForm = document.querySelector("#cityForm");
 var cityName = document.querySelector("#cityName");
-var cityList = document.querySelector("#cityList");
-var cityCountSpan = document.querySelector("#cityCount");
-*/
-var searchButton = document.querySelector("searchButton");
+var searchButton = $("#searchButton");
+var temperature = ("");
+var humidity = ("");
+var windSpeed = ("");
+var uvIndex = ("");
+var city = ("");
+var date = ("");
+var pressure = ("")
 
 
-document.getElementById("searchButton").addEventListener("click", function() {
+
+function search() {
+  var cityText = $("#cityName").val();
+
+  let queryURL =
+    "https://api.openweathermap.org/data/2.5/weather?q=" + cityText + "&units=imperial&appid=5e9d927b0c1db047906ff51b126d3a19";
+
+  $.ajax({
+    url: queryURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+    //get values from response
+    temperature = response["main"]["temp"]; 
+    city = response["name"];
+    humidity = response["main"]["humidity"];
+    windSpeed = response["wind"]["speed"];
+    //populate values to web page
+    document.getElementById("temperature").innerHTML="Temperature=" + " " + temperature;  
+    document.getElementById("city").innerHTML=city + " " + date; 
+    document.getElementById("humidity").innerHTML="Humidity =" + " " + humidity;
+    document.getElementById("windSpeed").innerHTML="Wind Speed =" + " " + windSpeed;
+    console.log(response["main"]["temp"]);
+  });
   
 
-  //$("#searchButton").on("click", searchButton);
-
-  //console.log(searchButton);
-}) 
-
- 
-function searchButton() {
-  var cityText = "Nashville";
-
- 
-   
-  let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=&units=imperial&appid=5e9d927b0c1db047906ff51b126d3a19"
-  
-$.ajax({
-  url: queryURL,
-  method: "GET"
-}).then(function(response){
-  console.log(searchButton);
-})
-}
-searchButton(onload);
-
-/*
-rendercityName();
-
-function rendercityName() {
-  // Clear todoList element and update todoCountSpan
-  cityList.innerHTML = "";
-  cityCountSpan.textContent = cityName.length;
-
-  // Render a new li for each todo
-  for (var i = 0; i < cityName.length; i++) {
-    var cityName = cityNames[i];
-
-    var li = document.createElement("li");
-    li.textContent = cityName;
-    cityList.appendChild(li);
-  }
 }
 
-cityForm.addEventListener("submit", function(event) {
-      event.preventDefault();
-    
-      var cityText = cityInput.value.trim();
-    
-      // Return from function early if submitted todoText is blank
-      if (cityText === "") {
-        return;
-      }
-    
-      // Add new todoText to todos array, clear the input
-      cityNames.push(cityText);
-      cityInput.value = "";
-    
-      // Re-render the list
-      rendercityNames();
+$(searchButton).click(function() {
+  search()
+});
 
-      console.log(cityForm);
-    });
-    */
 
    
-
-
-
-
-
-
-/*
-  const apiKey = "b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8"
-    function searchButton() {
-        let queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityText + "&units=imperial&appid=b6c7f7286dmshe0fc483e2db26bep1bc0a7jsnd6369187e5c8";
-           
-        $.ajax({
-            url: queryURL,
-            dataType: "jsonp",
-            method: "GET"
-        }).then(function(response) {
-            console.log(response);
-
-        })
-
-
-      }
-      */
-
-      
-      
- 
-
+    
